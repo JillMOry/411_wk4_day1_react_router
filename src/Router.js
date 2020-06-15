@@ -1,17 +1,19 @@
-/* 
-    Write code for React Router here
-Import the Home and About components from 
-the component folder. Assign the default
-path "/" to the Home component and "/about"
-to the About component.
+import React from "react";
+import "./App.css";
+import About from "./components/About";
+import Home from "./components/Home";
+import Car from "./components/Car";
+import { Switch, Route } from "react-router-dom";
 
-Remember to export the component at the end
-*/
-
-import React from 'react'
-import { Switch, Route } from 'react-router'
-// Write component imports here //
-
-
+function Router() {
+	return (
+		<Switch>
+			<Route path="/About" exact component={About} />
+			<Route path="/" component={Home} />
+			<Route path="/car/:id" component={Car} />
+		</Switch>
+	);
+}
 
 // Start Router function here //
+export default Router;

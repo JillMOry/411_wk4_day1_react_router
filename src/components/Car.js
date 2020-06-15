@@ -1,12 +1,20 @@
-import React from 'react'
-import cars from '../cars.json'
-// import material ui components here //
-// Container, Paper, Chip //
+import React from "react";
+import cars from "../cars.json";
+import { Container, Paper, Chip } from "@material-ui/core";
 
 const Car = (props) => {
-    return (
-        <h1>A specific car</h1>
-    )
-}
+	const id = props.match.params.id;
+	let car = cars.find((car) => car.id === id);
 
-export default Car
+	return (
+		<div>
+			<Container maxWidth="md">
+				<Paper elevation={3}>
+					<h2>{car.Name}</h2>
+				</Paper>
+			</Container>
+		</div>
+	);
+};
+
+export default Car;
