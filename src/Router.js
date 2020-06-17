@@ -8,12 +8,11 @@ import { Switch, Route } from "react-router-dom";
 function Router() {
 	return (
 		<Switch>
-			<Route path="/About" exact component={About} />
-			<Route path="/" component={Home} />
+			<Route exact path="/About" component={About} />
 			<Route path="/car/:id" component={Car} />
+			<Route path="/" component={Home} />
 		</Switch>
 	);
 }
 
-// Start Router function here //
 export default Router;
